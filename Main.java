@@ -1,8 +1,19 @@
+/** 
+ * Erick Guerra 23208
+ * gue23208@uvg.edu.gt
+ * Hoja-de-trabajo-7
+ * Lenguaje: Java
+ * Utilizacion de arboles para traducir una oracion
+ */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class Main {
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         BinaryTree<Association<String, String>> dictionary = new BinaryTree<>();
 
@@ -33,6 +44,11 @@ public class Main {
         }
     }
 
+    
+    /** 
+     * @param dictionary
+     * @return String
+     */
     private static String translateWord(String word, BinaryTree<Association<String, String>> dictionary) {
         Association<String, String> association = dictionary.search(word);
         if (association != null) {

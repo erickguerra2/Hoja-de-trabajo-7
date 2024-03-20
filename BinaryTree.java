@@ -17,10 +17,20 @@ class BinaryTree<T extends Comparable<T>> {
         root = null;
     }
 
+    
+    /** 
+     * @param element
+     */
     public void insert(T element) {
         root = insertRec(root, element);
     }
 
+    
+    /** 
+     * @param root
+     * @param element
+     * @return Node<T>
+     */
     private Node<T> insertRec(Node<T> root, T element) {
         if (root == null) {
             root = new Node<>(element);
@@ -40,6 +50,10 @@ class BinaryTree<T extends Comparable<T>> {
         inOrderTraversal(root);
     }
 
+    
+    /** 
+     * @param root
+     */
     private void inOrderTraversal(Node<T> root) {
         if (root != null) {
             inOrderTraversal(root.left);
@@ -48,14 +62,29 @@ class BinaryTree<T extends Comparable<T>> {
         }
     }
 
+    
+    /** 
+     * @return Node<T>
+     */
     public Node<T> getRoot() {
         return root;
     }
 
+    
+    /** 
+     * @param word
+     * @return T
+     */
     public T search(String word) {
         return searchInDictionaryRec(word, root);
     }
 
+    
+    /** 
+     * @param word
+     * @param root
+     * @return T
+     */
     private T searchInDictionaryRec(String word, Node<T> root) {
         if (root == null) {
             return null;
